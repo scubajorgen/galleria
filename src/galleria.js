@@ -2040,7 +2040,7 @@ Galleria = function() {
         active: false,
 
         add: function(elem, to, from, hide) {
-            if ( !elem || Galleria.TOUCH ) {
+            if ( !elem ) {
                 return;
             }
             if (!idle.bound) {
