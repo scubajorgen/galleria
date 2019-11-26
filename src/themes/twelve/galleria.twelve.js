@@ -199,14 +199,10 @@
                 fs_link.addClass('open');
                 bar.css('bottom',0);
                 this.defineTooltip('fullscreen', lang.exit_fullscreen);
-                if ( !Galleria.TOUCH ) {
-                    this.addIdleState(bar, { bottom: -31 });
-                }
             });
 
             this.bind( 'fullscreen_exit', function(e) {
                 FULLSCREEN = false;
-                Galleria.utils.clearTimer('bar');
                 gallery.setOptions('transition',transition);
 
                 fs_link.removeClass('open');
@@ -214,19 +210,13 @@
 
                 this.defineTooltip('fullscreen', lang.enter_fullscreen);
 
-                if ( !Galleria.TOUCH ) {
-                    this.removeIdleState(bar, { bottom:-31 });
-                }
             });
 
             this.bind( 'rescale', scaleThumbs);
 
-            if ( !Galleria.TOUCH ) {
-
-                this.addIdleState(this.get('image-nav-left'), {left:-36});
-                this.addIdleState(this.get('image-nav-right'), {right:-36});
-
-            }
+            this.addIdleState(this.get('image-nav-left'), {left:-36});
+            this.addIdleState(this.get('image-nav-right'), {right:-36});
+            this.addIdleState(bar, { bottom: -31 });
 
             // bind thumblink
             thumb_link.on('click:fast', toggleThumbs );
