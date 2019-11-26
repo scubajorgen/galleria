@@ -2141,7 +2141,7 @@ Galleria = function() {
 
                 elem.data('idle').complete = false;
 
-                Utils.animate( elem, data.to, {
+                Utils.animate( elem, Object.assign({}, data.to), {
                     duration: self._options.idleSpeed,
                     complete: function() {
                         if ( i == len-1 ) {
@@ -2173,7 +2173,7 @@ Galleria = function() {
 
                 self.clearTimer( 'idle' );
 
-                Utils.animate( elem, data.from, {
+                Utils.animate( elem, Object.assign({}, data.from), {
                     duration: self._options.idleSpeed/2,
                     complete: function() {
                         idle.active = true;
