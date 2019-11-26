@@ -29,6 +29,8 @@
     left: 0;
     background: #222 url(bar.png) repeat-x;
     z-index: 3;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
 }
 .galleria-theme-twelve.light .galleria-bar{background:#fff;height:30px;;}
 .galleria-theme-twelve .galleria-s1,
